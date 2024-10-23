@@ -1,26 +1,31 @@
-// app/components/ThemeSwitcher.tsx
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { Key, useEffect, useState } from "react";
 import MyTabs from "@/components/MyTabs";
 import { MyTabsType } from "@/components/MyTabs/types";
-
-const tabsConfig: MyTabsType[] = [
-  {
-    id: "1",
-    title: "Light Mode",
-  },
-  {
-    id: "2",
-    title: "Dark Mode",
-  },
-];
 
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+  const tabsConfig: MyTabsType[] = [
+    {
+      id: "1",
+      title: "Light Mode",
+    },
+    {
+      id: "2",
+      title: "Dark Mode",
+    },
+  ];
 
+  const handleThemeChange = (id: Key) => {
+    if (id === "1") {
+      setTheme("light");
+    } else if (id === "2") {
+      setTheme("dark");
+    }
+  };
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -29,9 +34,7 @@ export function ThemeSwitcher() {
 
   return (
     <div>
-      <MyTabs tabs={tabsConfig} />
-      <button onClick={() => setTheme("light")}>Light Mode</button>
-      <button onClick={() => setTheme("dark")}>Dark Mode</button>
+      <MyTabs tabs={tabsConfig} handleThemeChange={handleThemeChange} />
     </div>
   );
 }
