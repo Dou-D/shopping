@@ -3,21 +3,11 @@
 import { useTheme } from "next-themes";
 import { Key, useEffect, useState } from "react";
 import MyTabs from "@/components/MyTabs";
-import { MyTabsType } from "@/components/MyTabs/types";
+import { tabsConfig } from "./config";
 
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  const tabsConfig: MyTabsType[] = [
-    {
-      id: "1",
-      title: "Light Mode",
-    },
-    {
-      id: "2",
-      title: "Dark Mode",
-    },
-  ];
 
   const handleThemeChange = (id: Key) => {
     if (id === "1") {
@@ -33,8 +23,7 @@ export function ThemeSwitcher() {
   if (!mounted) return null;
 
   return (
-    <div>
-      <MyTabs tabs={tabsConfig} handleThemeChange={handleThemeChange} />
-    </div>
+    <MyTabs tabs={tabsConfig} handleThemeChange={handleThemeChange} />
+    
   );
 }

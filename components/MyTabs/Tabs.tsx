@@ -1,5 +1,5 @@
 import { Tabs, Tab } from "@nextui-org/tabs";
-import { MyTabsProps, MyTabsType } from "./types";
+import { MyTabsProps } from "./types";
 import { Card, CardBody } from "@nextui-org/react";
 
 export const MyTabs: React.FC<MyTabsProps> = ({ tabs, handleThemeChange }) => {
