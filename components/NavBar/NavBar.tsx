@@ -7,14 +7,12 @@ import {
   Button,
 } from "@nextui-org/react";
 import { AcmeLogo } from "./AcmeLogo";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MyIcon from "@/components/MyIcons";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 export default function MyNavbar() {
   return (
-    <Navbar shouldHideOnScroll>
+    <Navbar shouldHideOnScroll isBordered>
       <NavbarBrand>
         <AcmeLogo />
         <p className="font-bold text-inherit">ACME</p>
@@ -38,7 +36,7 @@ export default function MyNavbar() {
           </Link>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent>
+      <NavbarContent className="justify-start">
         <NavbarItem className="hidden lg:flex">
           <Link href="#">Login</Link>
         </NavbarItem>
@@ -46,9 +44,6 @@ export default function MyNavbar() {
           <Button as={Link} color="primary" href="#" variant="flat">
             Sign Up
           </Button>
-        </NavbarItem>
-        <NavbarItem className="absolute right-0">
-          <ThemeSwitcher />
         </NavbarItem>
       </NavbarContent>
     </Navbar>

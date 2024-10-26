@@ -1,8 +1,9 @@
-import { Button, ButtonGroup } from "@nextui-org/button";
+import PromotionalActivity from "@/components/PromotionalActivity";
 
 export default function HomePage() {
   return (
     <>
+      <PromotionalActivity />
     </>
   );
 }

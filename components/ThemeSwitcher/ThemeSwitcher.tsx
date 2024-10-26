@@ -5,7 +5,7 @@ import { Key, useEffect, useState } from "react";
 import MyTabs from "@/components/MyTabs";
 import { tabsConfig } from "./config";
 
-export function ThemeSwitcher() {
+export function ThemeSwitcher(): React.JSX.Element {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -20,10 +20,9 @@ export function ThemeSwitcher() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted) return <></>;
 
   return (
     <MyTabs tabs={tabsConfig} handleThemeChange={handleThemeChange} />
-    
   );
 }

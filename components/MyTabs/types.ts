@@ -1,6 +1,6 @@
 export interface MyTabsType {
   id: string;
-  title: string;
+  title: JSX.Element;
   content?: any;
 }
 
