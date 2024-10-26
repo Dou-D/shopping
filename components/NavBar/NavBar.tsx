@@ -1,6 +1,16 @@
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
-import {AcmeLogo} from "./AcmeLogo.jsx";
-import ThemeSwitcher from '@/components/ThemeSwitcher'
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
+  Button,
+} from "@nextui-org/react";
+import { AcmeLogo } from "./AcmeLogo";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import MyIcon from "@/components/MyIcons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 export default function MyNavbar() {
   return (
@@ -9,16 +19,18 @@ export default function MyNavbar() {
         <AcmeLogo />
         <p className="font-bold text-inherit">ACME</p>
       </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent>
         <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
+          <Link isBlock showAnchorIcon href="#" color="foreground">
+            前往企业版
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
+        <NavbarItem>
+          <Link isBlock href="#" color="foreground">
+            我的购物车
+            <MyIcon icon={faShoppingCart} color="#ff5000" />
           </Link>
+          <Link aria-current></Link>
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="#">
@@ -26,7 +38,7 @@ export default function MyNavbar() {
           </Link>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent justify="end">
+      <NavbarContent>
         <NavbarItem className="hidden lg:flex">
           <Link href="#">Login</Link>
         </NavbarItem>
@@ -35,8 +47,8 @@ export default function MyNavbar() {
             Sign Up
           </Button>
         </NavbarItem>
-        <NavbarItem>
-            <ThemeSwitcher />
+        <NavbarItem className="absolute right-0">
+          <ThemeSwitcher />
         </NavbarItem>
       </NavbarContent>
     </Navbar>

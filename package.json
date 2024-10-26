@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@nextui-org/react": "^2.4.8",
     "framer-motion": "^11.11.9",
     "next": "14.2.15",
@@ -17,6 +19,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

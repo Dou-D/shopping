@@ -2,8 +2,13 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import NextUIProvider from "./NextUIProvider";
-import {ThemeProvider as NextThemesProvider} from "next-themes";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 import NavBar from "@/components/NavBar";
+
+// Font Awesome
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +25,9 @@ export default function RootLayout({
       <body>
         <NextUIProvider>
           <NextThemesProvider attribute="class" defaultTheme="dark">
-            <NavBar />
+            <header className="w-full">
+              <NavBar />
+            </header>
             {children}
           </NextThemesProvider>
         </NextUIProvider>
