@@ -23,6 +23,6 @@ export function ThemeSwitcher(): React.JSX.Element {
   if (!mounted) return <></>;
 
   return (
-    <MyTabs tabs={tabsConfig} handleThemeChange={handleThemeChange} />
+    <MyTabs tabs={tabsConfig} handleChange={handleThemeChange} />
   );
 }

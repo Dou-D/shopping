@@ -25,7 +25,7 @@ const selectType: MySelectTypes[] = [
     label: "天猫",
   },
 ];
-const TopNavBar: React.FC = () => {
+export const TopNavBar: React.FC = () => {
   return (
     <Navbar shouldHideOnScroll>
       <NavbarBrand>
@@ -54,5 +54,3 @@ const TopNavBar: React.FC = () => {
     </Navbar>
   );
 };
-
-export default TopNavBar;

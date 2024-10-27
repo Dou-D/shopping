@@ -1,3 +1,3 @@
-import PromotionalActivity from "./PromotionalActivity";
+import { PromotionalActivity } from "./PromotionalActivity";
 
 export default PromotionalActivity;

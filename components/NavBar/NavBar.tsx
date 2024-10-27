@@ -10,7 +10,7 @@ import { AcmeLogo } from "./AcmeLogo";
 import MyIcon from "@/components/MyIcons";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
-export default function MyNavbar() {
+export const NavBar: React.FC = () => {
   return (
     <Navbar shouldHideOnScroll isBordered>
       <NavbarBrand>
@@ -48,4 +48,4 @@ export default function MyNavbar() {
       </NavbarContent>
     </Navbar>
   );
-}
+};

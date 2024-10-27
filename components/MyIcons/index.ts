@@ -1,3 +1,3 @@
-import MyIcon from './MyIcon'
+import { MyIcon } from "./MyIcon";
 
 export default MyIcon;

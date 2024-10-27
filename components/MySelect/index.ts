@@ -1,3 +1,3 @@
-import MySelect from "./MySelect";
+import { MySelect } from "./MySelect";
 
 export default MySelect;

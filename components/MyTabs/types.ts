@@ -6,5 +6,5 @@ export interface MyTabsType {
 
 export interface MyTabsProps {
   tabs: MyTabsType[];
-  handleThemeChange: (key: React.Key) => void;
+  handleChange: (key: React.Key) => void;
 }

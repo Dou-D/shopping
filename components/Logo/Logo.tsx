@@ -1,6 +1,6 @@
 import { Image } from "@nextui-org/react";
 
-const Logo: React.FC = () => {
+export const Logo: React.FC = () => {
   return (
     <Image
       width="100"
@@ -9,5 +9,3 @@ const Logo: React.FC = () => {
     />
   );
 };
-
-export default Logo;
