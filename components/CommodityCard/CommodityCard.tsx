@@ -2,7 +2,7 @@ import { Card, CardBody, CardHeader, Image } from "@nextui-org/react";
 
 export const CommodityCard: React.FC = () => {
   return (
-    <Card className="p-4 m-4">
+    <Card>
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
         <p className="text-tiny uppercase font-bold">Daily Mix</p>
         <small className="text-default-500">12 Tracks</small>
@@ -13,7 +13,8 @@ export const CommodityCard: React.FC = () => {
           alt="Card background"
           className="object-cover rounded-xl"
           src="https://nextui.org/images/hero-card-complete.jpeg"
-          width={270}
+          width={180}
+          height={220}
         />
       </CardBody>
     </Card>
