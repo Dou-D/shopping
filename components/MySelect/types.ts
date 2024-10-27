@@ -1,4 +1,12 @@
+import { Key } from "@react-types/shared";
+
 export interface MySelectTypes {
-    key: string | number
-    label: string
+  options: SelectDataType[];
+  size?: "md" | "sm" | "lg" | undefined
+  defaultSelectedKey: "all" | Iterable<Key> | undefined;
+}
+
+export interface SelectDataType {
+  key: string | number;
+  label: string;
 }

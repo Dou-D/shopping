@@ -9,9 +9,9 @@ import Logo from "@/components/Logo";
 import MySelect from "@/components/MySelect";
 import MyIcon from "@/components/MyIcons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { MySelectTypes } from "@/components/MySelect/types";
+import { SelectDataType } from "@/components/MySelect/types";
 
-const selectType: MySelectTypes[] = [
+const selectType: SelectDataType[] = [
   {
     key: "1",
     label: "宝贝",
@@ -31,8 +31,8 @@ export const TopNavBar: React.FC = () => {
       <NavbarBrand>
         <Logo />
       </NavbarBrand>
-      <NavbarContent>
-        <NavbarItem>
+      <NavbarContent className="w-full">
+        <NavbarItem className="w-full">
           <form>
             <Input
               classNames={{
@@ -44,7 +44,13 @@ export const TopNavBar: React.FC = () => {
               }}
               placeholder="Type to search..."
               size="md"
-              startContent={<MySelect options={selectType} />}
+              startContent={
+                <MySelect
+                  options={selectType}
+                  defaultSelectedKey={[selectType[0].key]}
+                  size="sm"
+                />
+              }
               endContent={<MyIcon icon={faSearch} />}
               type="search"
             />

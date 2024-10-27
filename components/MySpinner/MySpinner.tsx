@@ -32,5 +32,5 @@ export const MySpinner: React.FC = () => {
     };
   }, []);
 
-  return <Spinner label="Loading..." color="warning" ref={loadingRef} />;
+  return <Spinner label="Loading..." color="primary" ref={loadingRef} labelColor="primary" />;
 };

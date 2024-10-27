@@ -1,5 +1,5 @@
 import MyIcon from "../MyIcons";
-import { CommodityCategoryTabsType } from "./types";
+import { MyTabsType } from "../MyTabs/types";
 import {
   faHeart,
   faShoePrints,
@@ -10,7 +10,7 @@ import {
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
 
-export const CommodityCategoryData: CommodityCategoryTabsType[] = [
+export const CommodityCategoryData: MyTabsType[] = [
   {
     id: "猜你喜欢",
     title: (

@@ -1,3 +1,5 @@
-import { MyTabsType } from "../MyTabs/types";
+import { MyTabsType } from "@/components/MyTabs/types";
 
-export interface CommodityCategoryTabsType extends MyTabsType {}
+export interface CommodityCategoryPropsType {
+    tabs: MyTabsType[]
+}
