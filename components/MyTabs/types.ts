@@ -1,7 +1,7 @@
 export interface MyTabsType {
   id: string;
-  title: JSX.Element;
-  content?: any;
+  title: React.ReactNode
+  content?: React.ReactNode;
 }
 
 export interface MyTabsProps {

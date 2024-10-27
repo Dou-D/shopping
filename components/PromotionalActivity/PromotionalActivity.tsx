@@ -1,6 +1,7 @@
 import { Image } from "@nextui-org/image";
 import Link from "next/link";
 
+// 优惠活动图片
 const PromotionalActivity: React.FC = () => {
   return (
     <>
