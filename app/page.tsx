@@ -1,9 +1,8 @@
 import CommodityCategory from "@/components/CommodityCategory";
 import { CommodityCategoryData } from "@/components/CommodityCategory/data";
+import CommodityList from "@/components/CommodityList";
 import PromotionalActivity from "@/components/PromotionalActivity";
-
 import TopNavBar from "@/components/TopNavBar";
-import { Button } from "@mui/material";
 
 export default function HomePage() {
 
@@ -13,6 +12,7 @@ export default function HomePage() {
       {/* top: logo+search+logo */}
       <TopNavBar />
       <CommodityCategory tabs={CommodityCategoryData} />
+      <CommodityList />
     </>
   );
 }
