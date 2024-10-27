@@ -3,6 +3,5 @@ export interface CommodityCardPropsType {
     title: string
     img: Base64URLString
     tag: string[]
-    price: string
-    
+    price: string   
 }
