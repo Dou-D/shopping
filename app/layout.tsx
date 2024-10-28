@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from 'next/font/google'
+import { Inter } from "next/font/google";
 import "./globals.css";
 import NextUIProvider from "./NextUIProvider";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
-import NavBar from "@/components/NavBar";
 
 // Font Awesome
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
@@ -17,9 +15,9 @@ export const metadata: Metadata = {
 };
 
 const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-})
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -31,11 +29,9 @@ export default function RootLayout({
       <body>
         <NextUIProvider>
           <NextThemesProvider attribute="class" defaultTheme="dark">
-            <header className="flex items-center">
-              <NavBar />
-              <ThemeSwitcher />
-            </header>
-            {children}
+            <main>
+              {children}
+            </main>
           </NextThemesProvider>
         </NextUIProvider>
       </body>
