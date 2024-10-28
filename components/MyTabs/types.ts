@@ -1,3 +1,5 @@
+import { ThemeKey } from "@/components/ThemeSwitcher/types";
+
 export interface MyTabsType {
   id: string;
   title: React.ReactNode
@@ -6,5 +8,5 @@ export interface MyTabsType {
 
 export interface MyTabsProps {
   tabs: MyTabsType[];
-  handleChange: (key: React.Key) => void;
+  handleChange: (key: ThemeKey) => void;
 }

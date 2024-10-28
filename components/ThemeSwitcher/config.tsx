@@ -4,11 +4,11 @@ import { faSun,faMoon } from "@fortawesome/free-solid-svg-icons";
 
 export const tabsConfig: MyTabsType[] = [
   {
-    id: "2",
+    id: "dark",
     title: <MyIcon icon={faMoon} />,
   },
   {
-    id: "1",
+    id: "light",
     title: <MyIcon icon={faSun} />,
   },
 ];
