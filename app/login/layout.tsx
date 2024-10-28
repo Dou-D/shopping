@@ -7,6 +7,7 @@ import {
 } from "@nextui-org/react";
 import { faMessage } from "@fortawesome/free-solid-svg-icons";
 import MyIcon from "@/components/MyIcons";
+import Link from "next/link";
 
 export default function LoginLayout({
   children,
@@ -19,8 +20,10 @@ export default function LoginLayout({
         <div className="w-full">
           <Navbar className="w-full flex justify-around">
             <NavbarBrand>
-              <AcmeLogo />
-              <p className="font-bold text-inherit">ACME</p>
+              <Link href="/">
+                <AcmeLogo />
+                <p className="font-bold text-inherit">ACME</p>
+              </Link>
             </NavbarBrand>
             <NavbarContent justify="end">
               <NavbarItem>

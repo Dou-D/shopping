@@ -11,9 +11,25 @@ export const MyLogin: React.FC = () => {
     <>
       <Card className="py-4 w-6/12 flex justify-center h-4/5 items-center">
         <CardHeader className="flex justify-center">
-          <h1 onClick={() => setType({ type: "password" })}>密码登录</h1>
+          <h1
+            onClick={() => {
+              setType({ type: "password" });
+              console.log(type.type);
+            }}
+            className="hover:text-red-200"
+          >
+            密码登录
+          </h1>
           <span className="m-4"> | </span>
-          <h1 onClick={() => setType({ type: "message" })}>短信登录</h1>
+          <h1
+            onClick={() => {
+              setType({ type: "message" });
+              console.log(type.type);
+            }}
+            className="hover:text-red-200"
+          >
+            短信登录
+          </h1>
         </CardHeader>
         <CardBody>
           <LoginForm type={type.type} />
