@@ -27,7 +27,7 @@ const selectType: SelectDataType[] = [
 ];
 export const TopNavBar: React.FC = () => {
   return (
-    <Navbar shouldHideOnScroll>
+    <Navbar>
       <NavbarBrand>
         <Logo />
       </NavbarBrand>

@@ -9,7 +9,7 @@ export const CommodityCategory: React.FC<CommodityCategoryPropsType> = ({ tabs }
     console.log(e);
   };
   return (
-    <Navbar>
+    <Navbar shouldHideOnScroll>
       <NavbarContent>
         <MyTabs tabs={tabs} handleChange={onChangeCommodity} />
       </NavbarContent>
