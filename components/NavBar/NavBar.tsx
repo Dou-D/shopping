@@ -4,7 +4,6 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
-  Button,
 } from "@nextui-org/react";
 import { AcmeLogo } from "./AcmeLogo";
 import MyIcon from "@/components/MyIcons";
@@ -26,7 +25,7 @@ export const NavBar: React.FC = () => {
         <NavbarItem>
           <Link isBlock href="#" color="foreground">
             我的购物车
-            <MyIcon icon={faShoppingCart} color="#ff5000" />
+            <MyIcon icon={faShoppingCart} />
           </Link>
           <Link aria-current></Link>
         </NavbarItem>
@@ -38,12 +37,7 @@ export const NavBar: React.FC = () => {
       </NavbarContent>
       <NavbarContent className="justify-start">
         <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
-          </Button>
+          <Link href="/login">你好，请登录</Link>
         </NavbarItem>
       </NavbarContent>
     </Navbar>
