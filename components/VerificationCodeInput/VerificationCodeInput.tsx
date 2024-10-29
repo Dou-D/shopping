@@ -5,7 +5,7 @@ export const VerificationCodeInput: React.FC = () => {
   return (
     <>
       <Input
-        type="email"
+        name="code"
         label="verification code"
         variant="bordered"
         placeholder="输入邮箱验证码"
