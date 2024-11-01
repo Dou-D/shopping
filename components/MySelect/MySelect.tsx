@@ -12,6 +12,7 @@ export const MySelect: React.FC<MySelectTypes> = ({
     <Select
       className="max-w-xs w-32"
       size={size || "sm"}
+      aria-label="select"
       defaultSelectedKeys={defaultSelectedKey}
     >
       {options.map((item) => (
