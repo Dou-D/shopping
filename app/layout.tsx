@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import NextUIProvider from "./NextUIProvider";
+import NextUIProvider from "../providers/NextUIProvider";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { CounterStoreProvider } from "@/providers/counter-store-provider";
 
