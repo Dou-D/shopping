@@ -19,7 +19,8 @@
     "next": "14.2.15",
     "next-themes": "^0.3.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "zustand": "^5.0.1"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
