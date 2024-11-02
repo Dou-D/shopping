@@ -5,6 +5,19 @@ import MySpinner from "../MySpinner";
 import { Button, Spacer } from "@nextui-org/react";
 import { useCounterStore } from "@/providers/counter-store-provider";
 import { useCommodityListStore } from "@/providers/commodityList-store-provider";
+import { ListChildComponentProps } from "react-window";
+import { ListItem } from "@mui/material";
+import VirtualizedList from "@/components/VirtualizedList";
+
+function renderRow(props: ListChildComponentProps) {
+  const { index, style } = props;
+
+  return (
+    <ListItem style={style} key={index} component="div" disablePadding>
+      <CommodityCard key={index} />
+    </ListItem>
+  );
+}
 
 export const CommodityList: React.FC = () => {
   const { count, decrementCount, incrementCount } = useCounterStore(
@@ -16,25 +29,8 @@ export const CommodityList: React.FC = () => {
     <>
       <div className="w-full flex flex-col">
         <div className="w-full flex justify-center">
-          <div className="grid grid-cols-5 gap-6">
-            {list.map((item) => (
-              <CommodityCard key={item} />
-            ))}
-          </div>
+          <VirtualizedList list={list} />
         </div>
-        <Spacer y={4} />
-        <MySpinner />
-      </div>
-      <Button onClick={() => void updateList(["11", "13", "14", "15"])}>添加</Button>
-      <div>
-        Count: {count}
-        <hr />
-        <button type="button" onClick={() => void incrementCount()}>
-          Increment Count
-        </button>
-        <button type="button" onClick={() => void decrementCount()}>
-          Decrement Count
-        </button>
       </div>
     </>
   );
