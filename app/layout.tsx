@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import NextUIProvider from "../providers/NextUIProvider";
-import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { NextThemesProvider } from "@/providers/NextThemesProvider";
 import { CounterStoreProvider } from "@/providers/counter-store-provider";
-
 // Font Awesome
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -29,7 +28,7 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <body>
         <NextUIProvider>
-          <NextThemesProvider attribute="class" defaultTheme="dark">
+          <NextThemesProvider attribute="class" defaultTheme="light">
             <CounterStoreProvider>{children}</CounterStoreProvider>
           </NextThemesProvider>
         </NextUIProvider>

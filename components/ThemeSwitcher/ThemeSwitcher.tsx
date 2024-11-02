@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { Key, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import MyTabs from "@/components/MyTabs";
 import { tabsConfig } from "./config";
 import { constantTheme, ThemeKey } from "./types";
