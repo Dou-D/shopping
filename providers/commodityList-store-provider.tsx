@@ -1,44 +1,27 @@
-"use client";
-import { type ReactNode, createContext, useRef, useContext } from "react";
-import { useStore } from "zustand";
+import { createStore } from "zustand/vanilla";
 
-import {
-  type CommodityListStoreType,
-  createCommodityListStore,
-} from "@/stores/commodity-store";
-
-export type CommodityListStoreApi = ReturnType<typeof createCommodityListStore>;
-
-export const CommodityListStoreContext = createContext<
-  CommodityListStoreApi | undefined
->(undefined);
-
-export interface CommodityListStoreProviderProps {
-  children: ReactNode;
-}
-
-export const CommodityListStoreProvider = (
-  props: CommodityListStoreProviderProps
-) => {
-  const storeRef = useRef<CommodityListStoreApi>();
-  if (!storeRef.current) {
-    storeRef.current = createCommodityListStore();
-  }
-
-  return (
-    <CommodityListStoreContext.Provider value={storeRef.current}>
-      {props.children}
-    </CommodityListStoreContext.Provider>
-  );
+export type CommodityListStateType = {
+  list: string[];
 };
 
-export const useCommodityListStore = <T,>(
-  selector: (store: CommodityListStoreType) => T
-): T => {
-  const commodityListStoreContext = useContext(CommodityListStoreContext);
+export type CommodityListActionType = {
+  updateList: (newList: string[]) => void;
+};
 
-  if (!commodityListStoreContext) {
-    throw new Error(`useCounterStore must be used within CounterStoreProvider`);
-  }
-  return useStore(commodityListStoreContext, selector);
+export type CommodityListStoreType = CommodityListStateType & CommodityListActionType;
+
+export const defaultInitState: CommodityListStateType = {
+  list: ["1", "2", '3', '4', '5', '6', '7', '8','9', '10'],
+};
+
+export const createCommodityListStore = (
+  initState: CommodityListStateType = defaultInitState
+) => {
+  return createStore<CommodityListStoreType>()((set) => {
+    return {
+      ...initState,
+      updateList: (newList: string[]) =>
+        set((state) => ({ list: [...state.list, ...newList] })),
+    };
+  });
 };

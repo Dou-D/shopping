@@ -8,16 +8,17 @@ export type CommodityListActionType = {
   updateList: (newList: string[]) => void;
 };
 
-export type CommodityListStoreType = CommodityListStateType & CommodityListActionType;
+export type CommodityListStoreType = CommodityListStateType &
+  CommodityListActionType;
 
 export const defaultInitState: CommodityListStateType = {
-  list: ["1", "2", '3', '4', '5', '6', '7', '8','9', '10'],
+  list: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
 };
 
 export const createCommodityListStore = (
   initState: CommodityListStateType = defaultInitState
 ) => {
-  return createStore<CommodityListStoreType>()((set, get) => {
+  return createStore<CommodityListStoreType>()((set) => {
     return {
       ...initState,
       updateList: (newList: string[]) =>
