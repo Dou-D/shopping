@@ -2,8 +2,10 @@
 
 import { Spinner } from "@nextui-org/react";
 import { useEffect, useRef } from "react";
+import { useCommodityListStore } from "@/providers/commodityList-store-provider";
 
 export const MySpinner: React.FC = () => {
+  const { updateList } = useCommodityListStore((state) => state);
   const loadingRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -13,7 +15,13 @@ export const MySpinner: React.FC = () => {
         if (!entry.isIntersecting) {
           return;
         } else {
-          console.log("加载更多");
+          updateList([
+            (updateList.length + 1).toString(),
+            (updateList.length + 2).toString(),
+            (updateList.length + 3).toString(),
+            (updateList.length + 4).toString(),
+            (updateList.length + 5).toString(),
+          ]);
         }
       },
       {
@@ -32,5 +40,12 @@ export const MySpinner: React.FC = () => {
     };
   }, []);
 
-  return <Spinner label="Loading..." color="primary" ref={loadingRef} labelColor="primary" />;
+  return (
+    <Spinner
+      label="Loading..."
+      color="primary"
+      ref={loadingRef}
+      labelColor="primary"
+    />
+  );
 };
