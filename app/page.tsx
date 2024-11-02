@@ -5,6 +5,7 @@ import PromotionalActivity from "@/components/PromotionalActivity";
 import TopNavBar from "@/components/TopNavBar";
 import NavBar from "@/components/NavBar";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import { CommodityListStoreProvider } from "@/providers/commodityList-store-provider";
 
 export default function HomePage() {
   return (
@@ -16,8 +17,10 @@ export default function HomePage() {
       <PromotionalActivity />
       {/* top: logo+search+logo */}
       <TopNavBar />
-      <CommodityCategory tabs={CommodityCategoryData} />
-      <CommodityList />
+      <CommodityListStoreProvider>
+        <CommodityCategory tabs={CommodityCategoryData} />
+        <CommodityList />
+      </CommodityListStoreProvider>
     </>
   );
 }

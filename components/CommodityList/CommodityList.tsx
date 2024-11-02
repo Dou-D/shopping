@@ -2,18 +2,22 @@
 
 import CommodityCard from "@/components/CommodityCard";
 import MySpinner from "../MySpinner";
-import { Spacer } from "@nextui-org/react";
+import { Button, Spacer } from "@nextui-org/react";
 import { useCounterStore } from "@/providers/counter-store-provider";
+import { useCommodityListStore } from "@/providers/commodityList-store-provider";
+
 export const CommodityList: React.FC = () => {
   const { count, decrementCount, incrementCount } = useCounterStore(
     (state) => state
   );
+  const { list, updateList } = useCommodityListStore((state) => state);
+
   return (
     <>
       <div className="w-full flex flex-col">
         <div className="w-full flex justify-center">
           <div className="grid grid-cols-5 gap-6">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
+            {list.map((item) => (
               <CommodityCard key={item} />
             ))}
           </div>
@@ -21,6 +25,7 @@ export const CommodityList: React.FC = () => {
         <Spacer y={4} />
         <MySpinner />
       </div>
+      <Button onClick={() => void updateList(["11", "13", "14", "15"])}>添加</Button>
       <div>
         Count: {count}
         <hr />
