@@ -7,7 +7,7 @@ export const MyTag: React.FC<MyTagPropsType> = ({
 }) => {
   return (
     <>
-      <div className={`color ${color} mx-1 p-2 rounded-lg`}>{content}</div>
+      <div className={`color ${color} mx-1 p-2 rounded-lg hidden lg:block`}>{content}</div>
     </>
   );
 };
