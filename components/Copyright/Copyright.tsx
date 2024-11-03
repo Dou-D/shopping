@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@nextui-org/react";
 import { CopyrightPropsType } from "./types";
 
 // 底部版权
@@ -86,7 +86,9 @@ export const Copyright: React.FC = () => {
         return (
           <div key={item.id}>
             <Link href={item.href}>{item.content}</Link>
-            {index === config.length - 1 ? null : <span className="m-2">|</span>}
+            {index === config.length - 1 ? null : (
+              <span className="m-2">|</span>
+            )}
           </div>
         );
       })}

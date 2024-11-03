@@ -6,7 +6,7 @@ import TopNavBar from "@/components/TopNavBar";
 import NavBar from "@/components/NavBar";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { CommodityListStoreProvider } from "@/providers/commodityList-store-provider";
-import { Divider } from "@nextui-org/react";
+import { Divider, Spacer } from "@nextui-org/react";
 import Help from "@/components/Help";
 import AdvantageList from "@/components/AdvantageList";
 import Copyright from "@/components/Copyright";
@@ -28,10 +28,15 @@ export default function HomePage() {
         </CommodityListStoreProvider>
       </main>
       <footer>
+        <Spacer y={4} />
         <AdvantageList />
+        <Spacer y={4} />
         <Divider />
+        <Spacer y={2} />
         <Help />
+        <Spacer y={2} />
         <Divider />
+        <Spacer y={2} />
         <Copyright />
       </footer>
     </>

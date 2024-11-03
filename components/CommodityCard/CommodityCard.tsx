@@ -3,7 +3,7 @@ import TextClamp from "../TextClamp";
 
 export const CommodityCard: React.FC = () => {
   return (
-    <Card>
+    <Card isPressable shadow="sm">
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
         <Image
           alt="Card background"
