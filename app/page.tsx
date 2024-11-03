@@ -6,6 +6,9 @@ import TopNavBar from "@/components/TopNavBar";
 import NavBar from "@/components/NavBar";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { CommodityListStoreProvider } from "@/providers/commodityList-store-provider";
+import { Divider } from "@nextui-org/react";
+import Help from "@/components/Help";
+import AdvantageList from "@/components/AdvantageList";
 
 export default function HomePage() {
   return (
@@ -14,13 +17,21 @@ export default function HomePage() {
         <NavBar />
         <ThemeSwitcher />
       </header>
-      <PromotionalActivity />
-      {/* top: logo+search+logo */}
-      <TopNavBar />
-      <CommodityListStoreProvider>
-        <CommodityCategory tabs={CommodityCategoryData} />
-        <CommodityList />
-      </CommodityListStoreProvider>
+      <main>
+        <PromotionalActivity />
+        {/* top: logo+search+logo */}
+        <TopNavBar />
+        <CommodityListStoreProvider>
+          <CommodityCategory tabs={CommodityCategoryData} />
+          <CommodityList />
+        </CommodityListStoreProvider>
+      </main>
+      <footer>
+        <AdvantageList />
+        <Divider />
+        <Help />
+        <Divider />
+      </footer>
     </>
   );
 }
