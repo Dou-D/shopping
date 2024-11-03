@@ -9,7 +9,7 @@ function RenderRow(props: ListChildComponentProps) {
   const { index, style } = props;
 
   return (
-    <ListItem style={style} key={index} component="div" disablePadding>
+    <ListItem style={style} key={index} component="div" disablePadding className="m-2">
       <CommodityCard key={index} />
     </ListItem>
   );
@@ -19,7 +19,7 @@ export const VirtualizedList: React.FC<CommodityListType> = ({ list }) => {
   const columnCount = 5; // 设置列数
   const rowCount = Math.ceil((list.length + 1) / columnCount); // 计算行数 +1为了把MySpinner放到最后一个单元格
   const columnWidth = 300; // 每列宽度
-  const rowHeight = 350; // 每行高度，根据实际高度调整
+  const rowHeight = 375; // 每行高度，根据实际高度调整
 
   return (
     <div className="flex">
