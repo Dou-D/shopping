@@ -9,6 +9,7 @@ import { CommodityListStoreProvider } from "@/providers/commodityList-store-prov
 import { Divider } from "@nextui-org/react";
 import Help from "@/components/Help";
 import AdvantageList from "@/components/AdvantageList";
+import Copyright from "@/components/Copyright";
 
 export default function HomePage() {
   return (
@@ -31,6 +32,7 @@ export default function HomePage() {
         <Divider />
         <Help />
         <Divider />
+        <Copyright />
       </footer>
     </>
   );
