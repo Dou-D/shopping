@@ -49,10 +49,12 @@ export const VirtualizedList: React.FC<CommodityListType> = ({ list }) => {
             );
           }
           return (
-            // <div style={style}>
-            //   <CommodityCard key={list[itemIndex]} />
-            // </div>
-            <RenderRow key={list[itemIndex]} style={style} index={itemIndex} data={itemIndex} />
+            <RenderRow
+              key={list[itemIndex]}
+              style={style}
+              index={itemIndex}
+              data={itemIndex}
+            />
           );
         }}
       </FixedSizeGrid>
