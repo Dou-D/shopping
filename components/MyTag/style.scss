@@ -1,0 +1,33 @@
+$default: #3F3F46;
+$primary: #006FEE;
+$secondary: #9353D3;
+$success: #17C964;
+$warning: #F5A524;
+$danger: #F31260;
+
+.color {
+  color: #fff;
+  &.default {
+    background-color: $default;
+  }
+
+  &.primary {
+    background-color: $primary;
+  }
+
+  &.secondary {
+    background-color: $secondary;
+  }
+
+  &.success {
+    background-color: $success;
+  }
+
+  &.danger {
+    background-color: $danger;
+  }
+
+  &.warning {
+    background-color: $warning;
+  }
+}
