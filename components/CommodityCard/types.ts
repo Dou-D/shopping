@@ -1,7 +1,11 @@
 export interface CommodityCardPropsType {
-    id: string
-    title: string
-    img: Base64URLString
-    tag: string[]
-    price: string   
+  props: CommodityCardType;
+}
+
+export interface CommodityCardType {
+  id: string;
+  title: string;
+  img: string;
+  tag: string[];
+  price: string;
 }
