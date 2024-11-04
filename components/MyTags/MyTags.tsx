@@ -15,7 +15,7 @@ const config: TagsPropsType[] = [
     content: "商品体验优秀",
   },
 ];
-export const MyTags: React.FC = () => {
+export const MyTags: React.FC<TagsPropsType[]> = () => {
   return (
     <>
       {config.map((item) => {
