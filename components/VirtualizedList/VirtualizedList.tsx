@@ -1,25 +1,45 @@
-import { FixedSizeGrid, ListChildComponentProps } from "react-window";
-import { CommodityListType } from "@/components/CommodityList/types";
+"use client";
+import { FixedSizeGrid } from "react-window";
 import CommodityCard from "@/components/CommodityCard";
 import MySpinner from "@/components/MySpinner";
 import { Spacer } from "@nextui-org/react";
 import { ListItem } from "@mui/material";
+import { CommodityListStateType } from "@/stores/commodity-store";
+import { RenderRowPropsType } from "./types";
+import Link from "next/link";
+import { forwardRef } from "react";
+import { CommodityCardPropsType } from "@/components/CommodityCard/types";
+import { useCommodityListStore } from "@/providers/commodityList-store-provider";
 
-function RenderRow(props: ListChildComponentProps) {
-  const { index, style } = props;
-
+// 将自组件的dom暴露出去
+// https://zh-hans.react.dev/reference/react/forwardRef
+const ForwardedCommodityCard = forwardRef<unknown, CommodityCardPropsType>(
+  ({ props }, ref) => <CommodityCard props={props} />
+);
+function RenderRow(props: RenderRowPropsType) {
+  const { index, style, data } = props;
   return (
-    <ListItem style={style} key={index} component="div" disablePadding className="m-2">
-      <CommodityCard key={index} />
+    <ListItem
+      style={style}
+      key={index}
+      component="div"
+      disablePadding
+      className="m-2"
+    >
+      <Link href={data.id} legacyBehavior passHref>
+        <ForwardedCommodityCard props={data} />
+      </Link>
     </ListItem>
   );
 }
 
-export const VirtualizedList: React.FC<CommodityListType> = ({ list }) => {
+export const VirtualizedList: React.FC<CommodityListStateType> = ({ list }) => {
   const columnCount = 5; // 设置列数
   const rowCount = Math.ceil((list.length + 1) / columnCount); // 计算行数 +1为了把MySpinner放到最后一个单元格
   const columnWidth = 300; // 每列宽度
   const rowHeight = 375; // 每行高度，根据实际高度调整
+
+  const { updateList } = useCommodityListStore((state) => state);
 
   return (
     <div className="flex">
@@ -31,7 +51,7 @@ export const VirtualizedList: React.FC<CommodityListType> = ({ list }) => {
         rowHeight={rowHeight}
         width={1600} // 容器的宽度
       >
-        {({ columnIndex, rowIndex, style }) => {
+        {({ columnIndex, rowIndex, style, data }) => {
           const itemIndex = rowIndex * columnCount + columnIndex; // itemIndex为在list中的位置
           if (itemIndex > list.length) return null; // 防止数组越界
           else if (itemIndex === list.length) {
@@ -50,10 +70,10 @@ export const VirtualizedList: React.FC<CommodityListType> = ({ list }) => {
           }
           return (
             <RenderRow
-              key={list[itemIndex]}
+              key={list[itemIndex].id}
               style={style}
               index={itemIndex}
-              data={itemIndex}
+              data={list[itemIndex]}
             />
           );
         }}
