@@ -10,7 +10,7 @@ export const CommodityList: React.FC = () => {
     <>
       <div className="w-full flex flex-col">
         <div className="w-full flex justify-center">
-          <div className="grid grid-cols-5 gap-6">
+          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {list.map((item, index) => (
               <CommodityCard key={index} props={item} />
             ))}
