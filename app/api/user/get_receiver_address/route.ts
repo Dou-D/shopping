@@ -7,7 +7,6 @@ export async function GET(req: NextRequest) {
   cloneBody.size = "10";
   const cookieStore = cookies();
   const res = await fetch("/api/user/get_receiver_address", {
-    method: "POST",
     headers: {
       Authorization: `Bearer ${cookieStore.get("token")}`,
       "Content-Type": "application/json",
