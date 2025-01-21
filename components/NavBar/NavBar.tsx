@@ -7,7 +7,11 @@ import {
 } from "@nextui-org/react";
 import { AcmeLogo } from "./AcmeLogo";
 import MyIcon from "@/components/MyIcons";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowUpRightFromSquare,
+  faMessage,
+  faShoppingCart,
+} from "@fortawesome/free-solid-svg-icons";
 
 export const NavBar: React.FC = () => {
   return (
@@ -18,8 +22,9 @@ export const NavBar: React.FC = () => {
       </NavbarBrand>
       <NavbarContent>
         <NavbarItem>
-          <Link isBlock showAnchorIcon href="#" color="foreground">
+          <Link isBlock href="#" color="foreground">
             前往企业版
+            <MyIcon icon={faArrowUpRightFromSquare} />
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -30,8 +35,9 @@ export const NavBar: React.FC = () => {
           <Link aria-current></Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
+          <Link isBlock color="foreground" href="#">
+            消息
+            <MyIcon icon={faMessage} />
           </Link>
         </NavbarItem>
       </NavbarContent>
