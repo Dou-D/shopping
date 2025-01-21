@@ -1,28 +1,16 @@
-import { useMessage } from "@/hooks/useMessage";
-import type {
-  Response,
-  Data,
-} from "./types";
+import type { Response, Request } from "./types";
+import { NextRequest, NextResponse } from "next/server";
 
 // 通过验证码登录
-export async function POST(
-  email: string,
-  verification_code: string
-): Promise<Data> {
+export async function POST(req: NextRequest) {
+  const cloneBody: Request = await req.json();
   const json = await fetch("https://jsonplaceholder.typicode.com/posts", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      email,
-      verification_code,
-    }),
+    body: JSON.stringify(cloneBody),
   });
   const res = (await json.json()) as Response;
-  if (res.status !== 200) {
-    const { showMessage } = useMessage();
-    showMessage(res.message);
-  }
-  return res.data;
+  return NextResponse.json(res);
 }
