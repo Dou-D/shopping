@@ -6,7 +6,6 @@ import { useMemo } from "react";
 
 export const EmailInput: React.FC = () => {
   const emailProps = useFormInput("xiaoming123@gmail.com");
-
   const validateEmail = (value: string) =>
     value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
 
@@ -20,6 +19,8 @@ export const EmailInput: React.FC = () => {
       className="max-w-xs"
       variant="bordered"
       isClearable
+      onClear={() => emailProps.setValue("")}
+      onChange={emailProps.onChange}
       type="email"
       name="username"
       label="Email"
@@ -27,7 +28,7 @@ export const EmailInput: React.FC = () => {
       isInvalid={isInvalid}
       color={isInvalid ? "danger" : "default"}
       errorMessage="您输入的邮箱不符合规范"
-      {...emailProps}
+      value={emailProps.value}
     />
   );
 };
