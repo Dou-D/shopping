@@ -1,9 +1,9 @@
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
-import { Response } from './types';
+import { Response, Request } from './types';
 
 export async function POST(req: NextRequest) {
-    const cloneBody = await req.json();
+    const cloneBody: Request = await req.json();
     const cookieStore = cookies();
     const res = await fetch('/api/user/update_receiver_address', {
         headers: {
