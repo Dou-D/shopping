@@ -1,8 +1,8 @@
-'use client'
+"use client";
 import { Input } from "@nextui-org/react";
 import { useState } from "react";
-import { EyeSlashFilledIcon } from "./EyeSlashFilledIcon";
-import { EyeFilledIcon } from "./EyeFilledIcon";
+import MyIcon from "@/components/MyIcons";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 export const PasswordInput: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,11 +21,7 @@ export const PasswordInput: React.FC = () => {
           onClick={toggleVisibility}
           aria-label="toggle password visibility"
         >
-          {isVisible ? (
-            <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-          ) : (
-            <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-          )}
+          {isVisible ? <MyIcon icon={faEyeSlash} /> : <MyIcon icon={faEye} />}
         </button>
       }
       type={isVisible ? "text" : "password"}
