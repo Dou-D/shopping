@@ -1,8 +1,8 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-
+import { Request } from "./types";
 export async function POST(req: NextResponse) {
-  const cloneBody = await req.json();
+  const cloneBody: Request = await req.json();
   const cookieStore = cookies();
   const res = await fetch("/api/user/modify_password", {
     method: "POST",

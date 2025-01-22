@@ -2,7 +2,6 @@ import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import { Request } from "./types";
 
-
 export async function POST(req: NextRequest) {
     const cookieStore = cookies();
     const cloneBody: Request = await req.json();
