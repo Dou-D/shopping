@@ -1,11 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Response } from "./types";
-type requestParams = {
-  email: string;
-};
+import { Response, Request } from "./types";
+
 
 export async function POST(req: NextRequest) {
-  const cloneBody: requestParams = await req.json();
+  const cloneBody: Request = await req.json();
 
   const res: Response = await (
     await fetch("/api/user/send_email", {

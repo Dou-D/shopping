@@ -3,3 +3,7 @@ export interface Response {
     message: string;
     status: number;
 }
+
+export interface Request {
+    email: string;
+}
