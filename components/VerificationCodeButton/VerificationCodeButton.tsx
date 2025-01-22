@@ -2,12 +2,13 @@
 
 import { Button } from "@nextui-org/react";
 import { useEffect, useState } from "react";
+import { VerificationCodeButtonProps } from "./type";
 
 const text = "获取验证码";
 const end_countdown = "秒后重发";
 const isCountdownDefault = false;
 const TIMEOUT = 5;
-export const VerificationCodeButton: React.FC = () => {
+export const VerificationCodeButton: React.FC<VerificationCodeButtonProps> = ({onSendEmail}) => {
   const [countdown, setCountdown] = useState(TIMEOUT);
   const [isCountdown, setIsCountdown] = useState(isCountdownDefault);
 
@@ -25,11 +26,10 @@ export const VerificationCodeButton: React.FC = () => {
     return () => clearInterval(timer);
   }, [isCountdown, countdown]);
 
-  const handleSendVerificationCode = () => {
+  const handleSendVerificationCode = async() => {
     setIsCountdown(true);
     setCountdown(TIMEOUT);
-    console.log(1);
-    
+    onSendEmail(); // 触发发送验证码的函数
   };
   return (
     <Button
