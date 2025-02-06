@@ -32,7 +32,7 @@ export const VerificationCodeInput: React.FC = () => {
     <>
       {contextHolder}
       <Input
-        name="code"
+        name="verification_code"
         label="verification code"
         variant="bordered"
         onChange={emailProps.onChange}

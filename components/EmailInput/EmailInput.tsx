@@ -22,7 +22,7 @@ export const EmailInput: React.FC = () => {
       onClear={() => emailProps.setValue("")}
       onChange={emailProps.onChange}
       type="email"
-      name="username"
+      name="email"
       label="Email"
       placeholder="输入您的邮箱"
       isInvalid={isInvalid}
